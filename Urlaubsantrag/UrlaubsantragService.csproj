@@ -87,6 +87,42 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Service References\MitarbeiterService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\VorgesetzterService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <None Include="Service References\MitarbeiterService\Mitarbeiter.wsdl" />
+    <None Include="Service References\MitarbeiterService\Mitarbeiter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MitarbeiterService\Mitarbeiter1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MitarbeiterService\Mitarbeiter2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VorgesetzterService\Vorgesetzter.disco" />
+    <None Include="Service References\VorgesetzterService\configuration91.svcinfo" />
+    <None Include="Service References\VorgesetzterService\configuration.svcinfo" />
+    <None Include="Service References\VorgesetzterService\Reference.svcmap">
+      <Generator>Xaml Activity Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\VorgesetzterService\endpointConfigurationNameResolver.svcinfo" />
+    <None Include="Service References\MitarbeiterService\Mitarbeiter.disco" />
+    <None Include="Service References\MitarbeiterService\configuration91.svcinfo" />
+    <None Include="Service References\MitarbeiterService\configuration.svcinfo" />
+    <None Include="Service References\MitarbeiterService\Reference.svcmap">
+      <Generator>Xaml Activity Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MitarbeiterService\endpointConfigurationNameResolver.svcinfo" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -94,13 +130,10 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Compile Include="BOs\Ablehnung.cs" />
-    <Compile Include="BOs\Genehmigung.cs" />
-    <Compile Include="BOs\Urlaubsantrag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Workflows\App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -127,6 +160,56 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MitarbeiterService\" />
+    <WCFMetadataStorage Include="Service References\VorgesetzterService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VorgesetzterService\Vorgesetzter.wsdl" />
+    <None Include="Service References\VorgesetzterService\Vorgesetzter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VorgesetzterService\Vorgesetzter1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VorgesetzterService\Vorgesetzter2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UrlaubsantragService.Contract\UrlaubsantragService.Contract.csproj">
+      <Project>{e330d221-b296-4e56-890d-3b72c38bfda9}</Project>
+      <Name>UrlaubsantragService.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Service References\VorgesetzterService\Urlaubsantrag.VorgesetzterService.IService.AntragEmpfangen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Service References\MitarbeiterService\Urlaubsantrag.MitarbeiterService.IService.StartUrlaubsantrag.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Service References\MitarbeiterService\Urlaubsantrag.MitarbeiterService.IService.GetAnswer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Service References\MitarbeiterService\Urlaubsantrag.MitarbeiterService.IService.GetAntwort.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

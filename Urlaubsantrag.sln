@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urlaubsantrag", "Urlaubsantrag\Urlaubsantrag.csproj", "{BDAAFC4C-D087-4EEA-A600-DD8D7E71745E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlaubsantragService", "Urlaubsantrag\UrlaubsantragService.csproj", "{BDAAFC4C-D087-4EEA-A600-DD8D7E71745E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "git", "git", "{99EC3A04-03B7-4661-9E6C-3731C3DB8CC6}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlaubsantragService.Contract", "UrlaubsantragService.Contract\UrlaubsantragService.Contract.csproj", "{E330D221-B296-4E56-890D-3B72C38BFDA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{BDAAFC4C-D087-4EEA-A600-DD8D7E71745E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDAAFC4C-D087-4EEA-A600-DD8D7E71745E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDAAFC4C-D087-4EEA-A600-DD8D7E71745E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E330D221-B296-4E56-890D-3B72C38BFDA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E330D221-B296-4E56-890D-3B72C38BFDA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E330D221-B296-4E56-890D-3B72C38BFDA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E330D221-B296-4E56-890D-3B72C38BFDA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
