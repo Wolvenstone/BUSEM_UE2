@@ -13,10 +13,10 @@
   <wsdl:message name="IService_StartUrlaubsantrag_OutputMessage">
     <wsdl:part name="parameters" element="tns:StartUrlaubsantragResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_GetAnswer_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAnswer" />
+  <wsdl:message name="IService_AntragEmpfangen_InputMessage">
+    <wsdl:part name="parameters" element="tns:AntragEmpfangen" />
   </wsdl:message>
-  <wsdl:message name="IService_GetAnswer_OutputMessage" />
+  <wsdl:message name="IService_AntragEmpfangen_OutputMessage" />
   <wsdl:message name="IService_GetAntwort_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAntwort" />
   </wsdl:message>
@@ -28,9 +28,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/StartUrlaubsantrag" message="tns:IService_StartUrlaubsantrag_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/StartUrlaubsantragResponse" message="tns:IService_StartUrlaubsantrag_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAnswer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAnswer" message="tns:IService_GetAnswer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAnswerResponse" message="tns:IService_GetAnswer_OutputMessage" />
+    <wsdl:operation name="AntragEmpfangen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AntragEmpfangen" message="tns:IService_AntragEmpfangen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AntragEmpfangenResponse" message="tns:IService_AntragEmpfangen_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAntwort">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAntwort" message="tns:IService_GetAntwort_InputMessage" />
@@ -48,8 +48,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAnswer">
-      <soap:operation soapAction="http://tempuri.org/IService/GetAnswer" style="document" />
+    <wsdl:operation name="AntragEmpfangen">
+      <soap:operation soapAction="http://tempuri.org/IService/AntragEmpfangen" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -6,8 +6,7 @@ using System.Web;
 
 
 namespace UrlaubsantragService.Contract {
-    [KnownTypeAttribute(typeof(Ablehnung))]
-    [KnownTypeAttribute(typeof(Genehmigung))]
+    [KnownTypeAttribute(typeof(AntragStatus))]
     [DataContract]
     public class Urlaubsantrag {
         [DataMember]
@@ -21,5 +20,8 @@ namespace UrlaubsantragService.Contract {
 
         [DataMember]
         public DateTime Urlaubsende { get; set; }
+
+        [DataMember]
+        public AntragStatus Status { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="926a9dfb-19da-48f2-aa15-e2f596444bcb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e1bf33a7-9526-451f-9919-ebdc76ec6ecc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:14708/Workflows/Vorgesetzter.xamlx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Vorgesetzter.xsd" MetadataType="Schema" ID="cd7b454d-a40b-4b52-be28-2a9ba5b3fd5c" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Vorgesetzter.xamlx?xsd=xsd0" />
-    <MetadataFile FileName="Vorgesetzter.wsdl" MetadataType="Wsdl" ID="41ddc1c0-b23f-4ce8-ac51-9bb6c1266495" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Vorgesetzter.xamlx?wsdl" />
-    <MetadataFile FileName="Vorgesetzter1.xsd" MetadataType="Schema" ID="17872069-caf9-4d14-9053-ae84f903ea9c" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Vorgesetzter.xamlx?xsd=xsd1" />
-    <MetadataFile FileName="Vorgesetzter2.xsd" MetadataType="Schema" ID="d4f81ac5-1e9a-4c4c-b672-3751bc893b27" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Vorgesetzter.xamlx?xsd=xsd2" />
-    <MetadataFile FileName="Vorgesetzter.disco" MetadataType="Disco" ID="ce92f878-2679-4295-9db9-017ea6e06de5" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Vorgesetzter.xamlx?disco" />
+    <MetadataFile FileName="Vorgesetzter.xsd" MetadataType="Schema" ID="81222637-b54e-4815-846f-3ec462e572d7" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Vorgesetzter.xamlx?xsd=xsd0" />
+    <MetadataFile FileName="Vorgesetzter.wsdl" MetadataType="Wsdl" ID="806e0a38-9ba4-4546-9c15-443d959d15dc" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Vorgesetzter.xamlx?wsdl" />
+    <MetadataFile FileName="Vorgesetzter1.xsd" MetadataType="Schema" ID="50f0269c-b5f1-4f19-96a9-c37957a46757" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Vorgesetzter.xamlx?xsd=xsd1" />
+    <MetadataFile FileName="Vorgesetzter2.xsd" MetadataType="Schema" ID="54d19dcb-e6e5-4f48-8de4-b788296ae7b0" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Vorgesetzter.xamlx?xsd=xsd2" />
+    <MetadataFile FileName="Vorgesetzter.disco" MetadataType="Disco" ID="6dfa4e57-b6c6-468a-935e-49a922dc086a" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Vorgesetzter.xamlx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

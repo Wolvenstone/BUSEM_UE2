@@ -32,13 +32,6 @@
     </p1:TextExpression.Namespaces>
     <p1:TextExpression.References>
       <sco:Collection x:TypeArguments="p1:AssemblyReference" x:Name="__ReferenceID12">
-        <p1:AssemblyReference>Microsoft.AI.Agent.Intercept</p1:AssemblyReference>
-        <p1:AssemblyReference>Microsoft.AI.DependencyCollector</p1:AssemblyReference>
-        <p1:AssemblyReference>Microsoft.AI.PerfCounterCollector</p1:AssemblyReference>
-        <p1:AssemblyReference>Microsoft.AI.ServerTelemetryChannel</p1:AssemblyReference>
-        <p1:AssemblyReference>Microsoft.AI.Web</p1:AssemblyReference>
-        <p1:AssemblyReference>Microsoft.AI.WindowsServer</p1:AssemblyReference>
-        <p1:AssemblyReference>Microsoft.ApplicationInsights</p1:AssemblyReference>
         <p1:AssemblyReference>Microsoft.CSharp</p1:AssemblyReference>
         <p1:AssemblyReference>System.Web.DynamicData</p1:AssemblyReference>
         <p1:AssemblyReference>System.Drawing</p1:AssemblyReference>
@@ -129,52 +122,40 @@
           <p1:Transition.To>
             <p1:State x:Name="__ReferenceID7" DisplayName="An Vorgesetzten senden " sap2010:WorkflowViewState.IdRef="State_4">
               <p1:State.Entry>
-                <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
-                  <uva:AntragEmpfangen sap2010:WorkflowViewState.IdRef="AntragEmpfangen_2" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
-                    <uva:AntragEmpfangen.antrag>
-                      <p1:InArgument x:TypeArguments="uc:Urlaubsantrag">
-                        <mca:CSharpValue x:TypeArguments="uc:Urlaubsantrag">antrag</mca:CSharpValue>
-                      </p1:InArgument>
-                    </uva:AntragEmpfangen.antrag>
-                    <uva:AntragEmpfangen.correlationid>
-                      <p1:OutArgument x:TypeArguments="x:String">
-                        <mca:CSharpReference x:TypeArguments="x:String">vorgesetzterCorrelationid</mca:CSharpReference>
-                      </p1:OutArgument>
-                    </uva:AntragEmpfangen.correlationid>
-                  </uva:AntragEmpfangen>
-                  <InitializeCorrelation sap2010:WorkflowViewState.IdRef="InitializeCorrelation_2">
-                    <InitializeCorrelation.Correlation>
-                      <p1:InArgument x:TypeArguments="CorrelationHandle">
-                        <mca:CSharpValue x:TypeArguments="CorrelationHandle">vorgesetzterCorrelationHandler</mca:CSharpValue>
-                      </p1:InArgument>
-                    </InitializeCorrelation.Correlation>
-                    <p1:InArgument x:TypeArguments="x:String" x:Key="key1">
-                      <mca:CSharpValue x:TypeArguments="x:String">vorgesetzterCorrelationid</mca:CSharpValue>
+                <uva:AntragEmpfangen sap2010:WorkflowViewState.IdRef="AntragEmpfangen_1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+                  <uva:AntragEmpfangen.antrag>
+                    <p1:InArgument x:TypeArguments="uc:Urlaubsantrag">
+                      <mca:CSharpValue x:TypeArguments="uc:Urlaubsantrag">antrag</mca:CSharpValue>
                     </p1:InArgument>
-                  </InitializeCorrelation>
-                </p1:Sequence>
+                  </uva:AntragEmpfangen.antrag>
+                  <uva:AntragEmpfangen.correlationId>
+                    <p1:InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String">correlationid</mca:CSharpValue>
+                    </p1:InArgument>
+                  </uva:AntragEmpfangen.correlationId>
+                </uva:AntragEmpfangen>
               </p1:State.Entry>
               <p1:State.Transitions>
                 <p1:Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_6">
                   <p1:Transition.To>
                     <p1:State x:Name="__ReferenceID8" DisplayName="Antwort empfangen" sap2010:WorkflowViewState.IdRef="State_5">
                       <p1:State.Entry>
-                        <p1:Sequence>
+                        <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <p1:Sequence.Variables>
                             <x:Reference>__ReferenceID3</x:Reference>
                           </p1:Sequence.Variables>
-                          <Receive x:Name="__ReferenceID2" OperationName="GetAnswer" ServiceContractName="p:IService">
+                          <Receive x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="Receive_6" OperationName="AntragEmpfangen" ServiceContractName="p:IService">
                             <Receive.CorrelatesOn>
                               <XPathMessageQuery x:Key="key1">
                                 <XPathMessageQuery.Namespaces>
                                   <ssx:XPathMessageContextMarkup>
                                     <x:String x:Key="xgSc">http://tempuri.org/</x:String>
                                   </ssx:XPathMessageContextMarkup>
-                                </XPathMessageQuery.Namespaces>sm:body()/xgSc:GetAnswer/xgSc:id</XPathMessageQuery>
+                                </XPathMessageQuery.Namespaces>sm:body()/xgSc:AntragEmpfangen/xgSc:correlationid</XPathMessageQuery>
                             </Receive.CorrelatesOn>
                             <Receive.CorrelatesWith>
                               <p1:InArgument x:TypeArguments="CorrelationHandle">
-                                <mca:CSharpValue x:TypeArguments="CorrelationHandle">vorgesetzterCorrelationHandler</mca:CSharpValue>
+                                <mca:CSharpValue x:TypeArguments="CorrelationHandle">correlationHandler</mca:CSharpValue>
                               </p1:InArgument>
                             </Receive.CorrelatesWith>
                             <Receive.CorrelationInitializers>
@@ -191,18 +172,13 @@
                               </RequestReplyCorrelationInitializer>
                             </Receive.CorrelationInitializers>
                             <ReceiveParametersContent>
-                              <p1:OutArgument x:TypeArguments="x:String" x:Key="id" />
-                              <p1:OutArgument x:TypeArguments="uc:Genehmigung" x:Key="genehmigung">
-                                <mca:CSharpReference x:TypeArguments="uc:Genehmigung">genehmigung</mca:CSharpReference>
-                              </p1:OutArgument>
-                              <p1:OutArgument x:TypeArguments="uc:Ablehnung" x:Key="ablehnung">
-                                <mca:CSharpReference x:TypeArguments="uc:Ablehnung">ablehnung</mca:CSharpReference>
+                              <p1:OutArgument x:TypeArguments="x:String" x:Key="correlationid" />
+                              <p1:OutArgument x:TypeArguments="uc:Urlaubsantrag" x:Key="antrag">
+                                <mca:CSharpReference x:TypeArguments="uc:Urlaubsantrag">antrag</mca:CSharpReference>
                               </p1:OutArgument>
                             </ReceiveParametersContent>
-                            <sap2010:WorkflowViewState.IdRef>Receive_6</sap2010:WorkflowViewState.IdRef>
                           </Receive>
                           <SendReply Request="{x:Reference __ReferenceID2}" DisplayName="SendReplyToReceive" sap2010:WorkflowViewState.IdRef="SendReply_4" />
-                          <sap2010:WorkflowViewState.IdRef>Sequence_7</sap2010:WorkflowViewState.IdRef>
                         </p1:Sequence>
                       </p1:State.Entry>
                       <p1:State.Transitions>
@@ -247,8 +223,8 @@
                                   </Receive>
                                   <SendReply Request="{x:Reference __ReferenceID4}" DisplayName="SendReplyToReceive" sap2010:WorkflowViewState.IdRef="SendReply_2">
                                     <SendParametersContent>
-                                      <p1:InArgument x:TypeArguments="x:String" x:Key="answer">
-                                        <mca:CSharpValue x:TypeArguments="x:String">genehmigung != null ? "juhu" : "ohno"</mca:CSharpValue>
+                                      <p1:InArgument x:TypeArguments="uc:Urlaubsantrag" x:Key="antrag">
+                                        <mca:CSharpValue x:TypeArguments="uc:Urlaubsantrag">antrag</mca:CSharpValue>
                                       </p1:InArgument>
                                     </SendParametersContent>
                                   </SendReply>
@@ -281,13 +257,9 @@
     <p1:StateMachine.Variables>
       <p1:Variable x:TypeArguments="uc:Urlaubsantrag" Name="antrag" />
       <p1:Variable x:TypeArguments="x:String" Name="correlationid" />
-      <p1:Variable x:TypeArguments="x:String" Name="vorgesetzterCorrelationid" />
       <p1:Variable x:TypeArguments="CorrelationHandle" Name="correlationHandler" />
-      <p1:Variable x:TypeArguments="CorrelationHandle" Name="vorgesetzterCorrelationHandler" />
-      <p1:Variable x:TypeArguments="uc:Genehmigung" Name="genehmigung" />
-      <p1:Variable x:TypeArguments="uc:Ablehnung" Name="ablehnung" />
     </p1:StateMachine.Variables>
-    <sads:DebugSymbol.Symbol>d2NDOlxVc2Vyc1x3b2xmc3N0XERvY3VtZW50c1xVbmlcQlVTRU0gVUVcVUUyXFVybGF1YnNhbnRyYWdcVXJsYXVic2FudHJhZ1xXb3JrZmxvd3NcTWl0YXJiZWl0ZXIueGFtbHgkFQOjAhUBAUEFlAIQAWmEAiWEApsBAWeCAQ2QAhgBQaABFYwCIAEd0wEdiAIoAQJDCX0XAWyEARGbAR8BRKIBGc4BJwEg1QEh/wEvAQVHC1IXAo0BUwtmFQKCAWcLfBcBbYUBE5ABKQFWkQETmgErAUWmARvLASUBJMwBG8wBngEBIdkBI/cBLQES+AEj/gEvAQZPEU9oApcBShFKZAKOAVgVXCgCjAFjEWNlAoMBeRF5XAF3bBVsbgFujQEZjQF4AV+IARmIAWUBV5gBF5gBbgFOlAEZlAF+AUaxASGxAYYBATjEASHEAXgBL7gBJbwBOAEuxwEhxwF0ASXkASnkAYIBARTrAS3vAUABE/sBKfsBjAEBBw==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d2NDOlxVc2Vyc1x3b2xmc3N0XERvY3VtZW50c1xVbmlcQlVTRU0gVUVcVUUyXFVybGF1YnNhbnRyYWdcVXJsYXVic2FudHJhZ1xXb3JrZmxvd3NcTWl0YXJiZWl0ZXIueGFtbHgfFQOHAhUBAToF/AEQATbsASXsAZsBATR7DfgBGAEojQEV9AEgARW7AR3wASgBAjwJdhcBOX0RiAEnASuPARm2AScBGL0BIecBLwEFQAtLFwFOTAtfFQFHYAt1FwE6gAEXgAFjATCFAReFAWIBLJMBG7QBJQEctQEbtQGeAQEZwQEj3wEtAQ7gASPmAS8BBkgRSGgBVEMRQ2QBT1EVVSgBTVwRXGUBSHIRclwBQGUVZW4BO54BIZ4BegEjpQElqQE4ASKxASGxAXUBHcwBKcwBggEBENMBLdcBQAEP4wEp4wF1AQc=</sads:DebugSymbol.Symbol>
   </p1:StateMachine>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -301,15 +273,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="AntragEmpfangen_2" sap:VirtualizedContainerService.HintSize="242,22" />
-      <sap2010:ViewStateData Id="InitializeCorrelation_2" sap:VirtualizedContainerService.HintSize="242,97" />
-      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="264,283">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="AntragEmpfangen_1" sap:VirtualizedContainerService.HintSize="200,22" />
       <sap2010:ViewStateData Id="Receive_6" sap:VirtualizedContainerService.HintSize="255,86" />
       <sap2010:ViewStateData Id="SendReply_4" sap:VirtualizedContainerService.HintSize="255,86" />
       <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="277,336">
@@ -346,7 +310,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="State_6" sap:VirtualizedContainerService.HintSize="164,68">
+      <sap2010:ViewStateData Id="State_6" sap:VirtualizedContainerService.HintSize="326,698">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">228,496</av:Point>
@@ -366,7 +330,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="State_5" sap:VirtualizedContainerService.HintSize="326,698">
+      <sap2010:ViewStateData Id="State_5" sap:VirtualizedContainerService.HintSize="169,61">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">223,359.5</av:Point>

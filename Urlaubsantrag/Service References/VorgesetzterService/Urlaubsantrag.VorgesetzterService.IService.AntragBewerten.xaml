@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap2010 sads" x:Class="Urlaubsantrag.MitarbeiterService.Activities.GetAntwort" this:GetAntwort.EndpointConfigurationName="BasicHttpBinding_IService"
+<Activity mc:Ignorable="sap2010 sads" x:Class="Urlaubsantrag.VorgesetzterService.Activities.AntragBewerten" this:AntragBewerten.EndpointConfigurationName="BasicHttpBinding_IService2"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
@@ -7,28 +7,30 @@
  xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
- xmlns:this="clr-namespace:Urlaubsantrag.MitarbeiterService.Activities"
- xmlns:uc="clr-namespace:UrlaubsantragService.Contract;assembly=UrlaubsantragService.Contract"
- xmlns:uc1="clr-namespace:UrlaubsantragService.Contract;assembly=UrlaubsantragService.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
- xmlns:um="clr-namespace:Urlaubsantrag.MitarbeiterService;assembly=Urlaubsantrag, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
- xmlns:um1="clr-namespace:Urlaubsantrag.MitarbeiterService;assembly=Urlaubsantrag"
+ xmlns:this="clr-namespace:Urlaubsantrag.VorgesetzterService.Activities"
+ xmlns:uv="clr-namespace:Urlaubsantrag.VorgesetzterService;assembly=Urlaubsantrag, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+ xmlns:uv1="clr-namespace:Urlaubsantrag.VorgesetzterService;assembly=Urlaubsantrag"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="EndpointConfigurationName" Type="x:String">
       <x:Property.Attributes>
         <sc:DefaultValueAttribute>
           <x:Arguments>
-            <x:String>BasicHttpBinding_IService</x:String>
+            <x:String>BasicHttpBinding_IService2</x:String>
           </x:Arguments>
         </sc:DefaultValueAttribute>
       </x:Property.Attributes>
     </x:Property>
-    <x:Property Name="correlationId" Type="InArgument(x:String)">
+    <x:Property Name="correlationid" Type="InArgument(x:String)">
       <x:Property.Attributes>
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
     </x:Property>
-    <x:Property Name="antrag" Type="OutArgument(uc:Urlaubsantrag)" />
+    <x:Property Name="genehmigt" Type="InArgument(x:Boolean)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
   </x:Members>
   <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
   <Sequence>
@@ -36,7 +38,7 @@
       <x:Reference>__ReferenceID1</x:Reference>
       <x:Reference>__ReferenceID2</x:Reference>
     </Sequence.Variables>
-    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IService/GetAntwort" OperationName="GetAntwort" ServiceContractName="p:IService">
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IService/AntragBewerten" OperationName="AntragBewerten" ServiceContractName="p:IService">
       <p1:Send.CorrelationInitializers>
         <p1:RequestReplyCorrelationInitializer>
           <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
@@ -51,31 +53,23 @@
         </p1:RequestReplyCorrelationInitializer>
       </p1:Send.CorrelationInitializers>
       <p1:SendMessageContent>
-        <InArgument x:TypeArguments="um1:GetAntwortRequest">[New Urlaubsantrag.MitarbeiterService.GetAntwortRequest() With { .correlationId = correlationId }]</InArgument>
+        <InArgument x:TypeArguments="uv1:AntragBewertenRequest">[New Urlaubsantrag.VorgesetzterService.AntragBewertenRequest() With { .correlationid = correlationid, .genehmigt = genehmigt }]</InArgument>
       </p1:SendMessageContent>
       <p1:Send.EndpointConfigurationName>
         <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
       </p1:Send.EndpointConfigurationName>
     </p1:Send>
-    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IService/GetAntwortResponse">
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IService/AntragBewertenResponse">
       <p1:ReceiveMessageContent>
-        <OutArgument x:TypeArguments="um1:GetAntwortResponse">
-          <VariableReference x:TypeArguments="um1:GetAntwortResponse">
+        <OutArgument x:TypeArguments="uv1:AntragBewertenResponse">
+          <VariableReference x:TypeArguments="uv1:AntragBewertenResponse">
             <VariableReference.Variable>
-              <Variable x:TypeArguments="um1:GetAntwortResponse" x:Name="__ReferenceID1" Name="tempResult_2aad456c5aee4178ad2b2e3bf6f455dc" />
+              <Variable x:TypeArguments="uv1:AntragBewertenResponse" x:Name="__ReferenceID1" Name="tempResult_04f555bff121454c856d8e5bc6a3f8f7" />
             </VariableReference.Variable>
           </VariableReference>
         </OutArgument>
       </p1:ReceiveMessageContent>
     </p1:ReceiveReply>
-    <Assign>
-      <Assign.To>
-        <OutArgument x:TypeArguments="uc:Urlaubsantrag">[antrag]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="uc:Urlaubsantrag">[tempResult_2aad456c5aee4178ad2b2e3bf6f455dc.antrag]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <sads:DebugSymbol.Symbol>d6cBQzpcVXNlcnNcd29sZnNzdFxEb2N1bWVudHNcVW5pXEJVU0VNIFVFXFVFMlxVcmxhdWJzYW50cmFnXFVybGF1YnNhbnRyYWdcU2VydmljZSBSZWZlcmVuY2VzXE1pdGFyYmVpdGVyU2VydmljZVxVcmxhdWJzYW50cmFnLk1pdGFyYmVpdGVyU2VydmljZS5JU2VydmljZS5HZXRBbnR3b3J0LnhhbWwJIgNQDgIBAScFOw8CAQo8BUYXAgEHRwVODgIBAjY9Np8BAgEMLA8wHwIBCz8LQx8CAQlMOExsAgEFSTlJQQIBAw==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d60BQzpcVXNlcnNcd29sZnNzdFxEb2N1bWVudHNcVW5pXEJVU0VNIFVFXFVFMlxVcmxhdWJzYW50cmFnXFVybGF1YnNhbnRyYWdcU2VydmljZSBSZWZlcmVuY2VzXFZvcmdlc2V0enRlclNlcnZpY2VcVXJsYXVic2FudHJhZy5Wb3JnZXNldHp0ZXJTZXJ2aWNlLklTZXJ2aWNlLkFudHJhZ0Jld2VydGVuLnhhbWwGJANKDgIBASkFPQ8CAQU+BUgXAgECOEE4wAECAQcuDzIfAgEGQQtFHwIBBA==</sads:DebugSymbol.Symbol>
   </Sequence>
 </Activity>

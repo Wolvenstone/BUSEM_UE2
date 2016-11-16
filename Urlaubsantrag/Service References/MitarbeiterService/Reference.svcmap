@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="62194ca5-5c48-4f15-90cf-0f0efa6ba45c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b8d20bd6-8988-4aee-b0e7-2e9f0930e546" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:14708/Workflows/Mitarbeiter.xamlx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Mitarbeiter.wsdl" MetadataType="Wsdl" ID="a1a3872f-2c08-482c-b322-73acdbc866b7" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Mitarbeiter.xamlx?wsdl" />
-    <MetadataFile FileName="Mitarbeiter.xsd" MetadataType="Schema" ID="f58df863-c680-4941-8269-f2c62f53318b" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Mitarbeiter.xamlx?xsd=xsd0" />
-    <MetadataFile FileName="Mitarbeiter1.xsd" MetadataType="Schema" ID="cae95d83-6253-4c2d-8872-3b76310a16eb" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Mitarbeiter.xamlx?xsd=xsd1" />
-    <MetadataFile FileName="Mitarbeiter.disco" MetadataType="Disco" ID="b6c6d130-4aa8-4db1-a7cf-0b6c11544ba7" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Mitarbeiter.xamlx?disco" />
-    <MetadataFile FileName="Mitarbeiter2.xsd" MetadataType="Schema" ID="74d79c02-561b-44d3-a965-f37978859425" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Mitarbeiter.xamlx?xsd=xsd2" />
+    <MetadataFile FileName="Mitarbeiter.wsdl" MetadataType="Wsdl" ID="38288a20-49a5-402d-8a25-3cf3ecb0f85b" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Mitarbeiter.xamlx?wsdl" />
+    <MetadataFile FileName="Mitarbeiter.xsd" MetadataType="Schema" ID="14816be4-dea4-479d-b7e1-409e41e91651" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Mitarbeiter.xamlx?xsd=xsd0" />
+    <MetadataFile FileName="Mitarbeiter1.xsd" MetadataType="Schema" ID="31b2a7ab-9494-4a0c-baa3-60e72fd9a987" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Mitarbeiter.xamlx?xsd=xsd1" />
+    <MetadataFile FileName="Mitarbeiter.disco" MetadataType="Disco" ID="905b34e9-8c72-46cf-9651-e8270efa7606" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Mitarbeiter.xamlx?disco" />
+    <MetadataFile FileName="Mitarbeiter2.xsd" MetadataType="Schema" ID="9e1836f6-3a79-4b23-ba40-073a643a32b7" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Mitarbeiter.xamlx?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap2010 sads" x:Class="Urlaubsantrag.MitarbeiterService.Activities.GetAnswer" this:GetAnswer.EndpointConfigurationName="BasicHttpBinding_IService1"
+<Activity mc:Ignorable="sap2010 sads" x:Class="Urlaubsantrag.MitarbeiterService.Activities.AntragEmpfangen" this:AntragEmpfangen.EndpointConfigurationName="BasicHttpBinding_IService"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
@@ -18,22 +18,17 @@
       <x:Property.Attributes>
         <sc:DefaultValueAttribute>
           <x:Arguments>
-            <x:String>BasicHttpBinding_IService1</x:String>
+            <x:String>BasicHttpBinding_IService</x:String>
           </x:Arguments>
         </sc:DefaultValueAttribute>
       </x:Property.Attributes>
     </x:Property>
-    <x:Property Name="id" Type="InArgument(x:String)">
+    <x:Property Name="correlationid" Type="InArgument(x:String)">
       <x:Property.Attributes>
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
     </x:Property>
-    <x:Property Name="genehmigung" Type="InArgument(uc:Genehmigung)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
-    <x:Property Name="ablehnung" Type="InArgument(uc:Ablehnung)">
+    <x:Property Name="antrag" Type="InArgument(uc:Urlaubsantrag)">
       <x:Property.Attributes>
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
@@ -45,7 +40,7 @@
       <x:Reference>__ReferenceID1</x:Reference>
       <x:Reference>__ReferenceID2</x:Reference>
     </Sequence.Variables>
-    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IService/GetAnswer" OperationName="GetAnswer" ServiceContractName="p:IService">
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IService/AntragEmpfangen" OperationName="AntragEmpfangen" ServiceContractName="p:IService">
       <p1:Send.CorrelationInitializers>
         <p1:RequestReplyCorrelationInitializer>
           <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
@@ -60,23 +55,23 @@
         </p1:RequestReplyCorrelationInitializer>
       </p1:Send.CorrelationInitializers>
       <p1:SendMessageContent>
-        <InArgument x:TypeArguments="um1:GetAnswerRequest">[New Urlaubsantrag.MitarbeiterService.GetAnswerRequest() With { .id = id, .genehmigung = genehmigung, .ablehnung = ablehnung }]</InArgument>
+        <InArgument x:TypeArguments="um1:AntragEmpfangenRequest">[New Urlaubsantrag.MitarbeiterService.AntragEmpfangenRequest() With { .correlationid = correlationid, .antrag = antrag }]</InArgument>
       </p1:SendMessageContent>
       <p1:Send.EndpointConfigurationName>
         <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
       </p1:Send.EndpointConfigurationName>
     </p1:Send>
-    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IService/GetAnswerResponse">
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IService/AntragEmpfangenResponse">
       <p1:ReceiveMessageContent>
-        <OutArgument x:TypeArguments="um1:GetAnswerResponse">
-          <VariableReference x:TypeArguments="um1:GetAnswerResponse">
+        <OutArgument x:TypeArguments="um1:AntragEmpfangenResponse">
+          <VariableReference x:TypeArguments="um1:AntragEmpfangenResponse">
             <VariableReference.Variable>
-              <Variable x:TypeArguments="um1:GetAnswerResponse" x:Name="__ReferenceID1" Name="tempResult_b73dcea30e78410a94c3de481abf0596" />
+              <Variable x:TypeArguments="um1:AntragEmpfangenResponse" x:Name="__ReferenceID1" Name="tempResult_1d3e19a54aa643d292f0135a143fa0ea" />
             </VariableReference.Variable>
           </VariableReference>
         </OutArgument>
       </p1:ReceiveMessageContent>
     </p1:ReceiveReply>
-    <sads:DebugSymbol.Symbol>d6YBQzpcVXNlcnNcd29sZnNzdFxEb2N1bWVudHNcVW5pXEJVU0VNIFVFXFVFMlxVcmxhdWJzYW50cmFnXFVybGF1YnNhbnRyYWdcU2VydmljZSBSZWZlcmVuY2VzXE1pdGFyYmVpdGVyU2VydmljZVxVcmxhdWJzYW50cmFnLk1pdGFyYmVpdGVyU2VydmljZS5JU2VydmljZS5HZXRBbnN3ZXIueGFtbAYrA1EOAgEBMAVEDwIBBUUFTxcCAQI/PD+7AQIBBzUPOR8CAQZIC0wfAgEE</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d6wBQzpcVXNlcnNcd29sZnNzdFxEb2N1bWVudHNcVW5pXEJVU0VNIFVFXFVFMlxVcmxhdWJzYW50cmFnXFVybGF1YnNhbnRyYWdcU2VydmljZSBSZWZlcmVuY2VzXE1pdGFyYmVpdGVyU2VydmljZVxVcmxhdWJzYW50cmFnLk1pdGFyYmVpdGVyU2VydmljZS5JU2VydmljZS5BbnRyYWdFbXBmYW5nZW4ueGFtbAYmA0wOAgEBKwU/DwIBBUAFShcCAQI6Qjq7AQIBBzAPNB8CAQZDC0cfAgEE</sads:DebugSymbol.Symbol>
   </Sequence>
 </Activity>

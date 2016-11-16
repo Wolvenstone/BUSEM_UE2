@@ -3,22 +3,19 @@
   <xs:complexType name="Urlaubsantrag">
     <xs:sequence>
       <xs:element minOccurs="0" name="Nachname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:AntragStatus" />
       <xs:element minOccurs="0" name="Urlaubsbeginn" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Urlaubsende" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Vorname" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Urlaubsantrag" nillable="true" type="tns:Urlaubsantrag" />
-  <xs:complexType name="Ablehnung">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Grund" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Ablehnung" nillable="true" type="tns:Ablehnung" />
-  <xs:complexType name="Genehmigung">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Grund" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Genehmigung" nillable="true" type="tns:Genehmigung" />
+  <xs:simpleType name="AntragStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Offen" />
+      <xs:enumeration value="Genehmigt" />
+      <xs:enumeration value="Abgelehnt" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AntragStatus" nillable="true" type="tns:AntragStatus" />
 </xs:schema>

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap2010 sads" x:Class="Urlaubsantrag.VorgesetzterService.Activities.AntragEmpfangen" this:AntragEmpfangen.EndpointConfigurationName="BasicHttpBinding_IService"
+<Activity mc:Ignorable="sap2010 sads" x:Class="Urlaubsantrag.VorgesetzterService.Activities.AntragEmpfangen" this:AntragEmpfangen.EndpointConfigurationName="BasicHttpBinding_IService2"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
@@ -18,7 +18,7 @@
       <x:Property.Attributes>
         <sc:DefaultValueAttribute>
           <x:Arguments>
-            <x:String>BasicHttpBinding_IService</x:String>
+            <x:String>BasicHttpBinding_IService2</x:String>
           </x:Arguments>
         </sc:DefaultValueAttribute>
       </x:Property.Attributes>
@@ -28,7 +28,11 @@
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
     </x:Property>
-    <x:Property Name="correlationid" Type="OutArgument(x:String)" />
+    <x:Property Name="correlationId" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
   </x:Members>
   <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
   <Sequence>
@@ -51,7 +55,7 @@
         </p1:RequestReplyCorrelationInitializer>
       </p1:Send.CorrelationInitializers>
       <p1:SendMessageContent>
-        <InArgument x:TypeArguments="uv1:AntragEmpfangenRequest">[New Urlaubsantrag.VorgesetzterService.AntragEmpfangenRequest() With { .antrag = antrag }]</InArgument>
+        <InArgument x:TypeArguments="uv1:AntragEmpfangenRequest">[New Urlaubsantrag.VorgesetzterService.AntragEmpfangenRequest() With { .antrag = antrag, .correlationId = correlationId }]</InArgument>
       </p1:SendMessageContent>
       <p1:Send.EndpointConfigurationName>
         <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
@@ -62,20 +66,12 @@
         <OutArgument x:TypeArguments="uv1:AntragEmpfangenResponse">
           <VariableReference x:TypeArguments="uv1:AntragEmpfangenResponse">
             <VariableReference.Variable>
-              <Variable x:TypeArguments="uv1:AntragEmpfangenResponse" x:Name="__ReferenceID1" Name="tempResult_aebeb483236b4fa8b05501c2de5fd2c0" />
+              <Variable x:TypeArguments="uv1:AntragEmpfangenResponse" x:Name="__ReferenceID1" Name="tempResult_00fb5098cbef459d926a8e33ea22946e" />
             </VariableReference.Variable>
           </VariableReference>
         </OutArgument>
       </p1:ReceiveMessageContent>
     </p1:ReceiveReply>
-    <Assign>
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[correlationid]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[tempResult_aebeb483236b4fa8b05501c2de5fd2c0.correlationid]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <sads:DebugSymbol.Symbol>d64BQzpcVXNlcnNcd29sZnNzdFxEb2N1bWVudHNcVW5pXEJVU0VNIFVFXFVFMlxVcmxhdWJzYW50cmFnXFVybGF1YnNhbnRyYWdcU2VydmljZSBSZWZlcmVuY2VzXFZvcmdlc2V0enRlclNlcnZpY2VcVXJsYXVic2FudHJhZy5Wb3JnZXNldHp0ZXJTZXJ2aWNlLklTZXJ2aWNlLkFudHJhZ0VtcGZhbmdlbi54YW1sCSIDUA4CAQEnBTsPAgEKPAVGFwIBB0cFTg4CAQI2QjacAQIBDCwPMB8CAQs/C0MfAgEJTDBMawIBBUkxSUACAQM=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d64BQzpcVXNlcnNcd29sZnNzdFxEb2N1bWVudHNcVW5pXEJVU0VNIFVFXFVFMlxVcmxhdWJzYW50cmFnXFVybGF1YnNhbnRyYWdcU2VydmljZSBSZWZlcmVuY2VzXFZvcmdlc2V0enRlclNlcnZpY2VcVXJsYXVic2FudHJhZy5Wb3JnZXNldHp0ZXJTZXJ2aWNlLklTZXJ2aWNlLkFudHJhZ0VtcGZhbmdlbi54YW1sBiYDTA4CAQErBT8PAgEFQAVKFwIBAjpCOrwBAgEHMA80HwIBBkMLRx8CAQQ=</sads:DebugSymbol.Symbol>
   </Sequence>
 </Activity>

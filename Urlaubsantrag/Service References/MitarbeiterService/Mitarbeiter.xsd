@@ -15,12 +15,11 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAnswer">
+  <xs:element name="AntragEmpfangen">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/UrlaubsantragService.Contract" minOccurs="0" name="genehmigung" nillable="true" type="q2:Genehmigung" />
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/UrlaubsantragService.Contract" minOccurs="0" name="ablehnung" nillable="true" type="q3:Ablehnung" />
+        <xs:element minOccurs="0" name="correlationid" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/UrlaubsantragService.Contract" minOccurs="0" name="antrag" nillable="true" type="q2:Urlaubsantrag" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -34,7 +33,7 @@
   <xs:element name="GetAntwortResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="answer" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/UrlaubsantragService.Contract" minOccurs="0" name="antrag" nillable="true" type="q3:Urlaubsantrag" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

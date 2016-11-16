@@ -39,34 +39,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Drawing" />
@@ -87,6 +59,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Service References\AssistenzService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\MitarbeiterService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,24 +74,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <None Include="Service References\MitarbeiterService\Mitarbeiter.wsdl" />
-    <None Include="Service References\MitarbeiterService\Mitarbeiter.xsd">
+    <None Include="Service References\AssistenzService\Assistenz.wsdl" />
+    <None Include="Service References\AssistenzService\Assistenz.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MitarbeiterService\Mitarbeiter1.xsd">
+    <None Include="Service References\AssistenzService\Assistenz1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MitarbeiterService\Mitarbeiter2.xsd">
+    <None Include="Service References\AssistenzService\Assistenz2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VorgesetzterService\Vorgesetzter.disco" />
-    <None Include="Service References\VorgesetzterService\configuration91.svcinfo" />
-    <None Include="Service References\VorgesetzterService\configuration.svcinfo" />
-    <None Include="Service References\VorgesetzterService\Reference.svcmap">
-      <Generator>Xaml Activity Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\VorgesetzterService\endpointConfigurationNameResolver.svcinfo" />
     <None Include="Service References\MitarbeiterService\Mitarbeiter.disco" />
     <None Include="Service References\MitarbeiterService\configuration91.svcinfo" />
     <None Include="Service References\MitarbeiterService\configuration.svcinfo" />
@@ -123,7 +92,25 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\MitarbeiterService\endpointConfigurationNameResolver.svcinfo" />
-    <Content Include="Web.config" />
+    <None Include="Service References\AssistenzService\Assistenz.disco" />
+    <None Include="Service References\AssistenzService\configuration91.svcinfo" />
+    <None Include="Service References\AssistenzService\configuration.svcinfo" />
+    <None Include="Service References\AssistenzService\Reference.svcmap">
+      <Generator>Xaml Activity Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AssistenzService\endpointConfigurationNameResolver.svcinfo" />
+    <None Include="Service References\VorgesetzterService\Vorgesetzter.disco" />
+    <None Include="Service References\VorgesetzterService\configuration91.svcinfo" />
+    <None Include="Service References\VorgesetzterService\configuration.svcinfo" />
+    <None Include="Service References\VorgesetzterService\Reference.svcmap">
+      <Generator>Xaml Activity Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\VorgesetzterService\endpointConfigurationNameResolver.svcinfo" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -131,17 +118,19 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Workflows\App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="Service References\MitarbeiterService\Mitarbeiter2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VorgesetzterService\Vorgesetzter.wsdl" />
+    <None Include="Service References\VorgesetzterService\Vorgesetzter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VorgesetzterService\Vorgesetzter1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VorgesetzterService\Vorgesetzter2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Workflows\Mitarbeiter.xamlx">
@@ -162,29 +151,34 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\MitarbeiterService\" />
-    <WCFMetadataStorage Include="Service References\VorgesetzterService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\VorgesetzterService\Vorgesetzter.wsdl" />
-    <None Include="Service References\VorgesetzterService\Vorgesetzter.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\VorgesetzterService\Vorgesetzter1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\VorgesetzterService\Vorgesetzter2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\UrlaubsantragService.Contract\UrlaubsantragService.Contract.csproj">
       <Project>{e330d221-b296-4e56-890d-3b72c38bfda9}</Project>
       <Name>UrlaubsantragService.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AssistenzService\" />
+    <WCFMetadataStorage Include="Service References\MitarbeiterService\" />
+    <WCFMetadataStorage Include="Service References\VorgesetzterService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MitarbeiterService\Mitarbeiter.wsdl" />
+    <None Include="Service References\MitarbeiterService\Mitarbeiter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MitarbeiterService\Mitarbeiter1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <XamlAppDef Include="Service References\VorgesetzterService\Urlaubsantrag.VorgesetzterService.IService.AntragEmpfangen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Service References\VorgesetzterService\Urlaubsantrag.VorgesetzterService.IService.AntragBewerten.xaml">
       <Generator>MSBuild:Compile</Generator>
       <DependentUpon>Reference.svcmap</DependentUpon>
       <SubType>Designer</SubType>
@@ -198,7 +192,7 @@
     </XamlAppDef>
   </ItemGroup>
   <ItemGroup>
-    <XamlAppDef Include="Service References\MitarbeiterService\Urlaubsantrag.MitarbeiterService.IService.GetAnswer.xaml">
+    <XamlAppDef Include="Service References\MitarbeiterService\Urlaubsantrag.MitarbeiterService.IService.AntragEmpfangen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <DependentUpon>Reference.svcmap</DependentUpon>
       <SubType>Designer</SubType>
@@ -206,6 +200,13 @@
   </ItemGroup>
   <ItemGroup>
     <XamlAppDef Include="Service References\MitarbeiterService\Urlaubsantrag.MitarbeiterService.IService.GetAntwort.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Service References\AssistenzService\Urlaubsantrag.AssistenzService.IService.AntragEmpfangen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <DependentUpon>Reference.svcmap</DependentUpon>
       <SubType>Designer</SubType>

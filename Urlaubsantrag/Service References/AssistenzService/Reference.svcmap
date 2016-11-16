@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b5cbadc8-dcd1-4b2b-8ce9-e1d6c59bac5f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:14708/Workflows/Assistenz.xamlx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Assistenz.xsd" MetadataType="Schema" ID="9b432976-e115-479f-9466-f0db95d15954" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Assistenz.xamlx?xsd=xsd1" />
+    <MetadataFile FileName="Assistenz1.xsd" MetadataType="Schema" ID="6245e562-843d-43d7-8d06-543eaa30145a" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Assistenz.xamlx?xsd=xsd0" />
+    <MetadataFile FileName="Assistenz.disco" MetadataType="Disco" ID="b41a7e45-5819-4702-afe9-211234727e8a" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Assistenz.xamlx?disco" />
+    <MetadataFile FileName="Assistenz.wsdl" MetadataType="Wsdl" ID="5c80d4b1-b47a-468e-ba09-c7b717bdeb73" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Assistenz.xamlx?wsdl" />
+    <MetadataFile FileName="Assistenz2.xsd" MetadataType="Schema" ID="2987bb8b-e881-469a-8bff-fadd27226b6b" SourceId="1" SourceUrl="http://localhost:14708/Workflows/Assistenz.xamlx?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

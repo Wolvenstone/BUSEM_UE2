@@ -21,11 +21,11 @@ namespace Urlaubsantrag.MitarbeiterService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/StartUrlaubsantrag", ReplyAction="http://tempuri.org/IService/StartUrlaubsantragResponse")]
         System.Threading.Tasks.Task<Urlaubsantrag.MitarbeiterService.StartUrlaubsantragResponse> StartUrlaubsantragAsync(Urlaubsantrag.MitarbeiterService.StartUrlaubsantragRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAnswer", ReplyAction="http://tempuri.org/IService/GetAnswerResponse")]
-        Urlaubsantrag.MitarbeiterService.GetAnswerResponse GetAnswer(Urlaubsantrag.MitarbeiterService.GetAnswerRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AntragEmpfangen", ReplyAction="http://tempuri.org/IService/AntragEmpfangenResponse")]
+        Urlaubsantrag.MitarbeiterService.AntragEmpfangenResponse AntragEmpfangen(Urlaubsantrag.MitarbeiterService.AntragEmpfangenRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAnswer", ReplyAction="http://tempuri.org/IService/GetAnswerResponse")]
-        System.Threading.Tasks.Task<Urlaubsantrag.MitarbeiterService.GetAnswerResponse> GetAnswerAsync(Urlaubsantrag.MitarbeiterService.GetAnswerRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AntragEmpfangen", ReplyAction="http://tempuri.org/IService/AntragEmpfangenResponse")]
+        System.Threading.Tasks.Task<Urlaubsantrag.MitarbeiterService.AntragEmpfangenResponse> AntragEmpfangenAsync(Urlaubsantrag.MitarbeiterService.AntragEmpfangenRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAntwort", ReplyAction="http://tempuri.org/IService/GetAntwortResponse")]
         Urlaubsantrag.MitarbeiterService.GetAntwortResponse GetAntwort(Urlaubsantrag.MitarbeiterService.GetAntwortRequest request);
@@ -68,34 +68,30 @@ namespace Urlaubsantrag.MitarbeiterService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAnswer", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class GetAnswerRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AntragEmpfangen", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class AntragEmpfangenRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public string id;
+        public string correlationid;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public UrlaubsantragService.Contract.Genehmigung genehmigung;
+        public UrlaubsantragService.Contract.Urlaubsantrag antrag;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
-        public UrlaubsantragService.Contract.Ablehnung ablehnung;
-        
-        public GetAnswerRequest() {
+        public AntragEmpfangenRequest() {
         }
         
-        public GetAnswerRequest(string id, UrlaubsantragService.Contract.Genehmigung genehmigung, UrlaubsantragService.Contract.Ablehnung ablehnung) {
-            this.id = id;
-            this.genehmigung = genehmigung;
-            this.ablehnung = ablehnung;
+        public AntragEmpfangenRequest(string correlationid, UrlaubsantragService.Contract.Urlaubsantrag antrag) {
+            this.correlationid = correlationid;
+            this.antrag = antrag;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetAnswerResponse {
+    public partial class AntragEmpfangenResponse {
         
-        public GetAnswerResponse() {
+        public AntragEmpfangenResponse() {
         }
     }
     
@@ -121,13 +117,13 @@ namespace Urlaubsantrag.MitarbeiterService {
     public partial class GetAntwortResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public string answer;
+        public UrlaubsantragService.Contract.Urlaubsantrag antrag;
         
         public GetAntwortResponse() {
         }
         
-        public GetAntwortResponse(string answer) {
-            this.answer = answer;
+        public GetAntwortResponse(UrlaubsantragService.Contract.Urlaubsantrag antrag) {
+            this.antrag = antrag;
         }
     }
 }

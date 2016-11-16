@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap2010 sads" x:Class="Urlaubsantrag.MitarbeiterService.Activities.StartUrlaubsantrag" this:StartUrlaubsantrag.EndpointConfigurationName="BasicHttpBinding_IService1"
+<Activity mc:Ignorable="sap2010 sads" x:Class="Urlaubsantrag.MitarbeiterService.Activities.StartUrlaubsantrag" this:StartUrlaubsantrag.EndpointConfigurationName="BasicHttpBinding_IService"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
@@ -18,7 +18,7 @@
       <x:Property.Attributes>
         <sc:DefaultValueAttribute>
           <x:Arguments>
-            <x:String>BasicHttpBinding_IService1</x:String>
+            <x:String>BasicHttpBinding_IService</x:String>
           </x:Arguments>
         </sc:DefaultValueAttribute>
       </x:Property.Attributes>
@@ -62,7 +62,7 @@
         <OutArgument x:TypeArguments="um1:StartUrlaubsantragResponse">
           <VariableReference x:TypeArguments="um1:StartUrlaubsantragResponse">
             <VariableReference.Variable>
-              <Variable x:TypeArguments="um1:StartUrlaubsantragResponse" x:Name="__ReferenceID1" Name="tempResult_de1d4781f76e44a4b23a6370748c02ea" />
+              <Variable x:TypeArguments="um1:StartUrlaubsantragResponse" x:Name="__ReferenceID1" Name="tempResult_aaf678b5f5a04e7ebb253e26ab32f161" />
             </VariableReference.Variable>
           </VariableReference>
         </OutArgument>
@@ -73,7 +73,7 @@
         <OutArgument x:TypeArguments="x:String">[serviceCorrelationid]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[tempResult_de1d4781f76e44a4b23a6370748c02ea.serviceCorrelationid]</InArgument>
+        <InArgument x:TypeArguments="x:String">[tempResult_aaf678b5f5a04e7ebb253e26ab32f161.serviceCorrelationid]</InArgument>
       </Assign.Value>
     </Assign>
     <sads:DebugSymbol.Symbol>d68BQzpcVXNlcnNcd29sZnNzdFxEb2N1bWVudHNcVW5pXEJVU0VNIFVFXFVFMlxVcmxhdWJzYW50cmFnXFVybGF1YnNhbnRyYWdcU2VydmljZSBSZWZlcmVuY2VzXE1pdGFyYmVpdGVyU2VydmljZVxVcmxhdWJzYW50cmFnLk1pdGFyYmVpdGVyU2VydmljZS5JU2VydmljZS5TdGFydFVybGF1YnNhbnRyYWcueGFtbAkiA1AOAgEBJwU7DwIBCjwFRhcCAQdHBU4OAgECNkU2oQECAQwsDzAfAgELPwtDHwIBCUwwTHICAQVJMUlHAgED</sads:DebugSymbol.Symbol>
